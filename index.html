@@ -1,713 +1,916 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#070b12">
-<title>MESSI — The Eternal Number 10</title>
-<meta name="description" content="An immersive fan tribute to Lionel Messi: the career, the trophies, the magic and the legacy.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="A fan-made tribute to Lionel Messi — his journey, records, trophies and legendary moments.">
+  <title>MESSI 10 | The Greatest of All Time</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --bg:#070b12;
-  --surface:#101722;
-  --surface2:#151f2d;
-  --text:#f5f7fa;
-  --muted:#8d9bad;
-  --blue:#79c8ff;
-  --gold:#e9c477;
-  --line:rgba(255,255,255,.11);
-  --header:rgba(7,11,18,.82);
-  --shadow:0 24px 80px rgba(0,0,0,.3);
-}
-body.light {
-  --bg:#edf4fa;
-  --surface:#ffffff;
-  --surface2:#e2edf7;
-  --text:#101d2c;
-  --muted:#596d82;
-  --line:rgba(10,25,45,.13);
-  --header:rgba(237,244,250,.86);
-  --shadow:0 24px 70px rgba(30,60,90,.12);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:"DM Sans",sans-serif;transition:background .3s,color .3s;overflow-x:hidden}
-body,button,input{font-family:"DM Sans",sans-serif}
-a{color:inherit;text-decoration:none}
-button{color:inherit;cursor:pointer}
-img{max-width:100%;display:block}
-::selection{background:var(--blue);color:#06101a}
-button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--blue);outline-offset:4px}
-.progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--gold));z-index:1000}
-.wrap{width:min(1220px,calc(100% - 48px));margin:auto}
-header{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--header);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}
-.brand{font-family:"Barlow Condensed",sans-serif;font-size:29px;letter-spacing:2px;font-weight:900;white-space:nowrap}
-.brand span{color:var(--blue)}
-.navlinks{display:flex;align-items:center;gap:27px}
-.navlinks a{font-size:10px;letter-spacing:1.3px;font-weight:700;color:var(--muted);transition:color .2s}
-.navlinks a:hover{color:var(--text)}
-.navright{display:flex;gap:8px;align-items:center}
-.navbtn{width:39px;height:39px;border:1px solid var(--line);border-radius:50%;background:var(--surface);display:grid;place-items:center;font-size:16px}
-.menu{display:none}
-.hero{position:relative;min-height:760px;display:flex;align-items:center;overflow:hidden;background:#080e19}
-.hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,#070b12 0%,rgba(7,11,18,.96) 28%,rgba(7,11,18,.56) 62%,rgba(7,11,18,.25)),linear-gradient(0deg,#070b12 0%,transparent 28%),url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2000&q=90");background-size:cover;background-position:center}
-.hero-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 70% 48%,rgba(90,166,226,.17),transparent 45%)}
-.hero-inner{position:relative;z-index:2;padding:150px 0 110px}
-.overline{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:3px;font-weight:700;color:var(--blue);text-transform:uppercase}
-.overline:before{content:"";width:34px;height:1px;background:var(--blue)}
-.hero h1{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:clamp(90px,15vw,190px);font-weight:900;letter-spacing:-3px;line-height:.75;margin:34px 0 28px;max-width:900px}
-.hero h1 .line2{display:block;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.83)}
-.hero h1 .blue{color:var(--blue);-webkit-text-stroke:0}
-.hero-copy{max-width:490px;font-size:14px;line-height:1.9;color:#c2ccda}
-.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;border:1px solid var(--line);background:transparent;border-radius:2px;transition:transform .25s,background .25s,border-color .25s}
-.btn:hover{transform:translateY(-3px)}
-.btn-primary{background:var(--blue);border-color:var(--blue);color:#06101a}
-.btn-primary:hover{background:#b3e0ff}
-.btn-ghost{color:white;border-color:rgba(255,255,255,.28)}
-.hero-meta{display:flex;gap:30px;margin-top:54px;padding-top:23px;border-top:1px solid rgba(255,255,255,.15);width:min(540px,100%)}
-.meta strong{display:block;font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:700}
-.meta span{font-size:9px;letter-spacing:1.4px;color:#aab6c6;text-transform:uppercase}
-.hero-watermark{position:absolute;right:2%;bottom:-16%;font-family:"Barlow Condensed",sans-serif;font-size:clamp(300px,54vw,740px);font-weight:900;line-height:.8;color:rgba(255,255,255,.035);pointer-events:none}
-.scroll-note{position:absolute;right:24px;bottom:70px;writing-mode:vertical-rl;font-size:9px;letter-spacing:3px;color:#aab6c6}
-.section{padding:115px 0}
-.section-label{font-size:10px;letter-spacing:3px;color:var(--blue);font-weight:700;text-transform:uppercase}
-.section-title{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:clamp(45px,7vw,82px);font-weight:800;line-height:.95;letter-spacing:-.5px;margin:17px 0}
-.section-title .stroke{color:transparent;-webkit-text-stroke:1px var(--muted)}
-.section-desc{font-size:13px;line-height:1.9;color:var(--muted);max-width:590px}
-.stats{position:relative;z-index:3;margin-top:-30px;display:grid;grid-template-columns:repeat(4,1fr);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
-.stat{padding:28px 30px;border-right:1px solid var(--line)}
-.stat:last-child{border:0}
-.stat-num{font-family:"Barlow Condensed",sans-serif;font-size:51px;line-height:1;font-weight:800;color:var(--blue)}
-.stat-label{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-top:11px}
-.legacy-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
-.legacy-image{min-height:540px;position:relative;overflow:hidden;background:linear-gradient(0deg,rgba(5,12,22,.5),transparent 50%),url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1100&q=90") center/cover}
-.legacy-image:before{content:"10";position:absolute;right:-10px;bottom:-75px;font-family:"Barlow Condensed",sans-serif;font-size:300px;font-weight:900;color:rgba(255,255,255,.13)}
-.image-tag{position:absolute;left:22px;top:22px;padding:10px 13px;background:rgba(6,13,23,.75);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:white}
-.legacy-copy p{color:var(--muted);font-size:13px;line-height:2;margin:20px 0}
-.pullquote{margin-top:27px;border-left:2px solid var(--blue);padding:5px 0 5px 20px;font-family:"Barlow Condensed",sans-serif;font-size:27px;line-height:1.25}
-.pullquote small{display:block;font-family:"DM Sans",sans-serif;font-size:9px;letter-spacing:2px;color:var(--muted);margin-top:12px;text-transform:uppercase}
-.career-section{background:var(--surface)}
-.career-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
-.career-tabs{display:flex;gap:5px;flex-wrap:wrap;margin:36px 0 20px}
-.tab{border:1px solid var(--line);background:transparent;color:var(--muted);padding:12px 18px;font-size:9px;letter-spacing:1.2px;font-weight:700}
-.tab.active{background:var(--blue);border-color:var(--blue);color:#06101a}
-.career-panel{display:grid;grid-template-columns:1fr .85fr;min-height:350px;border:1px solid var(--line)}
-.career-info{padding:clamp(25px,5vw,60px);display:flex;flex-direction:column;justify-content:center}
-.career-years{font-family:"Barlow Condensed",sans-serif;color:var(--blue);font-size:13px;letter-spacing:2px}
-.career-name{font-family:"Barlow Condensed",sans-serif;font-size:clamp(38px,6vw,67px);line-height:.95;text-transform:uppercase;margin:17px 0}
-.career-text{font-size:13px;color:var(--muted);line-height:1.9;max-width:490px}
-.career-image{background-size:cover;background-position:center;min-height:280px;position:relative}
-.career-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--surface),transparent 60%)}
-.career-foot{display:flex;gap:25px;flex-wrap:wrap;margin-top:25px}
-.career-foot span{font-size:10px;color:var(--muted)}
-.career-foot strong{color:var(--text);font-size:14px;display:block;margin-bottom:4px}
-.trophy-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
-.search{width:min(100%,280px);padding:13px 15px;background:var(--surface);border:1px solid var(--line);color:var(--text);border-radius:0}
-.trophy-filters{display:flex;gap:7px;flex-wrap:wrap;margin:30px 0}
-.trophy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.trophy-card{position:relative;min-height:210px;padding:27px;background:var(--surface);border:1px solid var(--line);overflow:hidden;transition:transform .25s,border-color .25s}
-.trophy-card:hover{transform:translateY(-5px);border-color:var(--blue)}
-.trophy-card:after{content:attr(data-number);position:absolute;right:12px;bottom:-28px;font-family:"Barlow Condensed",sans-serif;font-size:145px;line-height:1;font-weight:900;color:rgba(121,200,255,.055);pointer-events:none}
-.trophy-icon{font-size:22px;color:var(--gold)}
-.trophy-card h3{font-family:"Barlow Condensed",sans-serif;font-size:28px;text-transform:uppercase;margin:24px 0 8px}
-.trophy-card p{font-size:11px;color:var(--muted);line-height:1.7;max-width:260px}
-.trophy-tag{font-size:9px;letter-spacing:1.5px;color:var(--blue);text-transform:uppercase;margin-top:18px;display:block}
-.worldcup{position:relative;overflow:hidden;background:#0c1a28;padding:clamp(30px,7vw,80px);display:grid;grid-template-columns:1fr .7fr;align-items:center;gap:30px;border:1px solid rgba(121,200,255,.18)}
-.worldcup:before{content:"2022";position:absolute;right:-20px;bottom:-80px;font-family:"Barlow Condensed",sans-serif;font-size:clamp(180px,32vw,440px);font-weight:900;color:rgba(255,255,255,.035);pointer-events:none}
-.worldcup-copy{position:relative;z-index:1}
-.worldcup h3{font-family:"Barlow Condensed",sans-serif;font-size:clamp(48px,8vw,100px);line-height:.85;text-transform:uppercase;margin:22px 0}
-.worldcup h3 span{color:var(--blue)}
-.worldcup p{max-width:500px;color:#aebdce;font-size:13px;line-height:1.9}
-.worldcup-art{position:relative;z-index:1;display:grid;place-items:center;min-height:230px}
-.worldcup-art span{font-size:clamp(90px,14vw,170px);filter:drop-shadow(0 0 40px rgba(233,196,119,.22))}
-.moments-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:40px}
-.moment{background:var(--surface);border:1px solid var(--line)}
-.moment-img{height:210px;overflow:hidden;background:var(--surface2)}
-.moment-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.moment:hover .moment-img img{transform:scale(1.06)}
-.moment-body{padding:24px}
-.moment-index{font-size:9px;letter-spacing:2px;color:var(--blue)}
-.moment h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:28px;margin:13px 0}
-.moment p{font-size:11px;color:var(--muted);line-height:1.8}
-.interactive-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.widget{padding:30px;background:var(--surface);border:1px solid var(--line)}
-.widget h3{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:34px;margin:12px 0}
-.widget p{font-size:12px;line-height:1.9;color:var(--muted)}
-.fact-text{min-height:90px;font-size:17px!important;color:var(--text)!important}
-.quiz-question{font-size:16px!important;color:var(--text)!important;margin:15px 0}
-.answers{display:grid;gap:8px;margin:20px 0}
-.answer{padding:13px 14px;text-align:left;background:var(--bg);border:1px solid var(--line);font-size:11px}
-.answer:hover:not(:disabled){border-color:var(--blue)}
-.answer.good{background:#17472f;border-color:#48c78e;color:white}
-.answer.bad{background:#59252b;border-color:#ff8585;color:white}
-.widget-status{font-size:11px;color:var(--blue);min-height:22px;margin:10px 0}
-footer{padding:55px 0;border-top:1px solid var(--line)}
-.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.footer-copy{max-width:420px;color:var(--muted);font-size:11px;line-height:1.9;margin-top:14px}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
-.footer-links a{font-size:10px;color:var(--muted)}
-.footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:9px}
-.to-top{position:fixed;right:22px;bottom:22px;width:43px;height:43px;background:var(--blue);color:#07101a;border:0;font-size:18px;z-index:90;opacity:0;pointer-events:none;transition:opacity .2s}
-.to-top.show{opacity:1;pointer-events:auto}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.no-results{color:var(--muted);font-size:13px;padding:25px 0}
-@media(max-width:900px){
- .navlinks{display:none;position:absolute;top:76px;left:0;right:0;padding:20px 24px 25px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
- .navlinks.open{display:flex}
- .navlinks a{padding:14px 0;border-bottom:1px solid var(--line)}
- .menu{display:grid}
- .hero{min-height:720px}
- .hero-bg{background-position:60% center}
- .legacy-grid{gap:35px}
- .stats{grid-template-columns:repeat(2,1fr)}
- .stat:nth-child(2){border-right:0}
- .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
- .trophy-grid{grid-template-columns:repeat(2,1fr)}
- .career-panel{grid-template-columns:1fr .6fr}
- .moments-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
- .wrap{width:calc(100% - 34px)}
- .nav{height:66px}
- .navlinks{top:66px}
- .brand{font-size:25px}
- .hero{min-height:690px}
- .hero-inner{padding:120px 0 95px}
- .hero-bg{background-position:63% center;background-image:linear-gradient(90deg,#070b12 0%,rgba(7,11,18,.87) 60%,rgba(7,11,18,.52)),linear-gradient(0deg,#070b12,transparent 40%),url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=85")}
- .hero h1{font-size:clamp(85px,22vw,130px)}
- .hero-meta{gap:18px;margin-top:38px}
- .meta strong{font-size:25px}
- .meta span{font-size:8px}
- .scroll-note{display:none}
- .section{padding:76px 0}
- .stats{margin-top:-18px}
- .stat{padding:21px 16px}
- .stat-num{font-size:40px}
- .stat-label{font-size:8px;line-height:1.5}
- .legacy-grid{grid-template-columns:1fr;gap:30px}
- .legacy-image{min-height:350px}
- .career-panel{grid-template-columns:1fr}
- .career-image{grid-row:1;min-height:190px}
- .career-image:after{background:linear-gradient(0deg,var(--surface),transparent 65%)}
- .career-info{padding:26px}
- .trophy-grid,.moments-grid,.interactive-grid{grid-template-columns:1fr}
- .trophy-card{min-height:180px}
- .moment-img{height:220px}
- .worldcup{grid-template-columns:1fr;gap:0}
- .worldcup-art{min-height:130px;justify-content:end}
- .worldcup-art span{font-size:90px}
- .widget{padding:23px}
- .footer-bottom{line-height:1.8}
-}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
- .reveal{opacity:1;transform:none}
-}
-</style>
+  <style>
+    :root {
+      --bg: #071426;
+      --bg2: #0b1d33;
+      --panel: #102640;
+      --text: #f4f8ff;
+      --muted: #9eb1c9;
+      --blue: #65c8ff;
+      --blue2: #168de2;
+      --gold: #f6ca72;
+      --line: rgba(255,255,255,.12);
+      --shadow: 0 22px 70px rgba(0,0,0,.25);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background .3s, color .3s;
+    }
+
+    body.light {
+      --bg: #eff6fc;
+      --bg2: #e2eef9;
+      --panel: #ffffff;
+      --text: #10243a;
+      --muted: #5e7188;
+      --blue: #087fca;
+      --blue2: #006bb5;
+      --gold: #9a6900;
+      --line: rgba(0,30,65,.15);
+      --shadow: 0 22px 70px rgba(15,50,80,.12);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    img { max-width: 100%; display: block; }
+    section { padding: 90px max(6%, calc((100% - 1200px)/2)); }
+    .container { max-width: 1200px; margin: auto; }
+    .eyebrow { color: var(--blue); font-size: .76rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+    .section-title { font: 800 clamp(2.3rem, 5vw, 4rem)/1 Barlow Condensed, sans-serif; text-transform: uppercase; margin: 12px 0 18px; }
+    .section-intro { color: var(--muted); max-width: 680px; margin-bottom: 35px; }
+    .accent { color: var(--blue); }
+    .gold { color: var(--gold); }
+
+    .top-progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0;
+      background: linear-gradient(90deg, var(--blue), var(--gold));
+      z-index: 2000;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1300px; margin: auto; padding: 14px 5%;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+
+    .brand { font: 900 1.7rem Barlow Condensed, sans-serif; letter-spacing: .04em; white-space: nowrap; }
+    .brand span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--muted); font-size: .83rem; font-weight: 700; transition: color .2s; }
+    .nav-links a:hover { color: var(--blue); }
+
+    .nav-actions { display: flex; gap: 9px; align-items: center; }
+    .icon-btn {
+      background: var(--panel); color: var(--text); border: 1px solid var(--line);
+      border-radius: 50%; width: 40px; height: 40px; font-size: 1rem;
+    }
+
+    .menu-btn { display: none; }
+
+    .hero {
+      min-height: 660px; padding: 90px 6%;
+      display: grid; grid-template-columns: 1.05fr .95fr; align-items: center;
+      gap: 35px; position: relative; overflow: hidden;
+      background:
+        radial-gradient(ellipse at 80% 45%, rgba(22,141,226,.22), transparent 45%),
+        linear-gradient(140deg, var(--bg), var(--bg2));
+    }
+
+    .hero::before {
+      content: "10"; position: absolute; right: 3%; top: -100px;
+      font: 900 28rem/.9 Barlow Condensed, sans-serif;
+      color: rgba(101,200,255,.045); pointer-events: none;
+    }
+
+    .hero-content { max-width: 660px; position: relative; z-index: 2; }
+    .hero-label { display: inline-flex; gap: 10px; align-items: center; color: var(--gold); font-size: .8rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .hero-label::before { content: ""; height: 2px; width: 30px; background: var(--gold); }
+    h1 { font: 900 clamp(4.5rem, 10vw, 8.5rem)/.82 Barlow Condensed, sans-serif; letter-spacing: -.035em; margin: 28px 0; }
+    h1 span { display: block; color: var(--blue); }
+    .hero p { max-width: 520px; color: var(--muted); font-size: 1rem; margin-bottom: 28px; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 21px; border-radius: 5px; font-size: .85rem; font-weight: 800;
+      border: 1px solid transparent; transition: transform .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary { background: var(--blue); color: #041323; }
+    .btn-outline { border-color: var(--line); color: var(--text); background: transparent; }
+    .btn-outline:hover { border-color: var(--blue); }
+
+    .hero-visual { min-height: 410px; position: relative; display: grid; place-items: center; }
+    .hero-ring {
+      width: min(90%, 410px); aspect-ratio: 1; border-radius: 50%;
+      border: 1px solid rgba(101,200,255,.35);
+      box-shadow: 0 0 0 25px rgba(101,200,255,.035), 0 0 0 55px rgba(101,200,255,.025);
+      display: grid; place-items: center; position: relative;
+    }
+    .hero-ring::before, .hero-ring::after {
+      content: ""; position: absolute; border: 1px solid rgba(246,202,114,.45);
+      border-radius: 50%; inset: 20px; transform: rotate(-30deg) scaleX(1.2);
+    }
+    .hero-ring::after { inset: -20px; transform: rotate(45deg) scaleX(.8); border-color: rgba(101,200,255,.22); }
+    .hero-number { font: 900 clamp(8rem, 20vw, 15rem)/1 Barlow Condensed, sans-serif; color: rgba(101,200,255,.15); }
+    .hero-card {
+      position: absolute; bottom: 4%; left: 0; background: var(--panel);
+      border: 1px solid var(--line); padding: 16px 20px; border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card strong { display: block; font: 800 1.5rem Barlow Condensed, sans-serif; }
+    .hero-card small { color: var(--muted); }
+
+    .stats-strip { padding: 25px 6%; background: var(--blue); color: #061728; }
+    .stats-grid { max-width: 1200px; margin: auto; display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat { text-align: center; padding: 10px; border-right: 1px solid rgba(0,0,0,.15); }
+    .stat:last-child { border: 0; }
+    .stat strong { display: block; font: 900 2.7rem/.95 Barlow Condensed, sans-serif; }
+    .stat span { font-size: .73rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 55px; align-items: center; }
+    .feature-art {
+      min-height: 360px; border-radius: 12px; overflow: hidden; position: relative;
+      background:
+        linear-gradient(0deg, rgba(3,15,29,.9), rgba(3,15,29,.05)),
+        url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1200&q=85") center/cover;
+      box-shadow: var(--shadow);
+    }
+    .feature-art::after { content: "THE BEAUTIFUL GAME"; position: absolute; bottom: 25px; left: 25px; font: 800 2.4rem Barlow Condensed, sans-serif; color: white; }
+    .feature-note { position: absolute; top: 20px; right: 20px; background: var(--gold); color: #172030; padding: 8px 12px; font-size: .72rem; font-weight: 900; border-radius: 3px; }
+
+    .quote { border-left: 3px solid var(--gold); padding: 18px 22px; margin: 25px 0; background: color-mix(in srgb, var(--panel) 75%, transparent); }
+    .quote p { font: 600 1.3rem/1.45 Barlow Condensed, sans-serif; }
+    .quote small { display: block; color: var(--muted); margin-top: 8px; }
+
+    .career-section { background: var(--bg2); }
+    .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 25px 0; }
+    .tab {
+      padding: 10px 18px; border-radius: 4px; border: 1px solid var(--line);
+      background: transparent; color: var(--muted); font-weight: 800; font-size: .8rem;
+    }
+    .tab.active { background: var(--blue); color: #061728; border-color: var(--blue); }
+    .career-card {
+      display: grid; grid-template-columns: 180px 1fr; gap: 25px;
+      background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+      padding: 28px; align-items: center;
+    }
+    .career-year { font: 900 4rem/.9 Barlow Condensed, sans-serif; color: var(--blue); }
+    .career-card h3 { font: 800 1.8rem Barlow Condensed, sans-serif; margin-bottom: 8px; }
+    .career-card p { color: var(--muted); }
+
+    .trophy-tools { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0 30px; }
+    .search-box {
+      min-width: 220px; flex: 1; padding: 11px 14px; color: var(--text);
+      background: var(--panel); border: 1px solid var(--line); border-radius: 5px;
+    }
+    .trophy-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .trophy {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 9px;
+      padding: 22px; transition: transform .2s, border-color .2s;
+    }
+    .trophy:hover { transform: translateY(-5px); border-color: var(--gold); }
+    .trophy-icon { font-size: 2rem; margin-bottom: 12px; }
+    .trophy h3 { font: 800 1.35rem Barlow Condensed, sans-serif; margin-bottom: 5px; }
+    .trophy p { font-size: .85rem; color: var(--muted); }
+    .trophy .tag { display: inline-block; margin-top: 12px; color: var(--gold); font-size: .7rem; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
+
+    .world-cup {
+      background:
+        linear-gradient(90deg, rgba(4,15,29,.97), rgba(4,15,29,.78)),
+        url("https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1600&q=85") center/cover;
+      color: #f7fbff;
+    }
+    .world-cup .section-intro { color: #c0d1e3; }
+    .wc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .wc-year { font: 900 clamp(5rem,12vw,10rem)/.9 Barlow Condensed, sans-serif; color: var(--gold); }
+    .wc-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .wc-fact { padding: 18px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 7px; }
+    .wc-fact strong { display: block; font: 800 1.7rem Barlow Condensed, sans-serif; color: var(--gold); }
+    .wc-fact span { font-size: .78rem; color: #d4e0ed; }
+
+    .moments-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .moment {
+      min-height: 240px; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 23px; border-radius: 9px; overflow: hidden; position: relative;
+      background: linear-gradient(0deg, rgba(3,14,27,.96), rgba(3,14,27,.1)),
+        url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80") center/cover;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .moment:nth-child(2) { background-image: linear-gradient(0deg, rgba(3,14,27,.96), rgba(3,14,27,.1)), url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80"); }
+    .moment:nth-child(3) { background-image: linear-gradient(0deg, rgba(3,14,27,.96), rgba(3,14,27,.1)), url("https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=900&q=80"); }
+    .moment span { color: var(--gold); font-size: .75rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+    .moment h3 { font: 800 1.8rem Barlow Condensed, sans-serif; margin-top: 5px; color: white; }
+    .moment p { font-size: .83rem; color: #c9d7e7; }
+
+    .facts-section { background: var(--bg2); }
+    .facts-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .fact {
+      display: flex; gap: 15px; align-items: flex-start;
+      padding: 20px; border: 1px solid var(--line); background: var(--panel); border-radius: 8px;
+    }
+    .fact-num { font: 900 1.6rem Barlow Condensed, sans-serif; color: var(--blue); }
+    .fact p { color: var(--muted); font-size: .9rem; }
+
+    .quiz-wrap { max-width: 760px; margin: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: clamp(22px,5vw,40px); box-shadow: var(--shadow); }
+    .quiz-top { display: flex; justify-content: space-between; gap: 15px; color: var(--muted); font-size: .8rem; font-weight: 800; margin-bottom: 25px; }
+    .quiz-question { font: 800 2rem/1.15 Barlow Condensed, sans-serif; margin-bottom: 20px; }
+    .answers { display: grid; gap: 10px; }
+    .answer {
+      text-align: left; padding: 14px 16px; border: 1px solid var(--line);
+      border-radius: 6px; background: transparent; color: var(--text); transition: background .2s;
+    }
+    .answer:hover:not(:disabled) { border-color: var(--blue); }
+    .answer.correct { background: rgba(45,190,120,.15); border-color: #2dbe78; }
+    .answer.wrong { background: rgba(255,90,90,.12); border-color: #ff6464; }
+    .quiz-feedback { color: var(--muted); margin: 15px 0; min-height: 25px; font-size: .9rem; }
+    .quiz-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+
+    footer { padding: 55px 6% 25px; background: #040c17; color: #f4f8ff; border-top: 1px solid rgba(255,255,255,.12); }
+    .footer-main { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; }
+    .footer-brand { font: 900 2rem Barlow Condensed, sans-serif; }
+    .footer-brand span { color: #65c8ff; }
+    .footer-note { color: #9eb1c9; max-width: 390px; font-size: .86rem; }
+    .footer-credit { display: flex; align-items: center; gap: 17px; }
+    .dodo-logo { width: 78px; height: 88px; flex: 0 0 auto; }
+    .made-by { font-size: .73rem; text-transform: uppercase; letter-spacing: .16em; color: #9eb1c9; font-weight: 800; }
+    .dodo-name { font: 900 2rem/.95 Barlow Condensed, sans-serif; letter-spacing: .07em; margin-top: 5px; }
+    .dodo-caption { font-size: .7rem; color: #65c8ff; margin-top: 7px; }
+    .footer-bottom { max-width: 1200px; margin: 30px auto 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; color: #8195ad; font-size: .75rem; }
+
+    .back-top {
+      position: fixed; bottom: 22px; right: 22px; width: 44px; height: 44px;
+      border: 0; border-radius: 50%; background: var(--blue); color: #061728;
+      font-size: 1.2rem; font-weight: 900; box-shadow: var(--shadow); z-index: 900;
+      opacity: 0; pointer-events: none; transition: opacity .2s;
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s, transform .7s; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .empty-state { color: var(--muted); padding: 20px; display: none; }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 14px; }
+      .hero { grid-template-columns: 1fr; padding-top: 70px; }
+      .hero-visual { min-height: 340px; }
+      .hero-ring { width: 300px; }
+      .hero-number { font-size: 11rem; }
+      .split, .wc-grid { grid-template-columns: 1fr; }
+      .trophy-grid, .moments-grid { grid-template-columns: repeat(2,1fr); }
+    }
+
+    @media (max-width: 680px) {
+      section { padding: 65px 6%; }
+      .nav { flex-wrap: wrap; }
+      .menu-btn { display: inline-block; }
+      .nav-links {
+        display: none; width: 100%; flex-direction: column; align-items: stretch;
+        padding: 12px 0 8px; gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 5px; border-top: 1px solid var(--line); }
+      .nav-actions { margin-left: auto; }
+      h1 { font-size: clamp(4.2rem,19vw,7rem); }
+      .hero { padding-left: 6%; padding-right: 6%; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid rgba(0,0,0,.15); }
+      .career-card { grid-template-columns: 1fr; }
+      .career-year { font-size: 3rem; }
+      .trophy-grid, .moments-grid, .facts-grid { grid-template-columns: 1fr; }
+      .wc-facts { grid-template-columns: repeat(2,1fr); }
+      .footer-main { align-items: flex-start; flex-direction: column; }
+      .footer-credit { gap: 12px; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
 </head>
 
 <body>
-<div class="progress" id="progress"></div>
+  <div class="top-progress" id="progress"></div>
 
-<header>
-  <nav class="nav wrap">
-    <a href="#home" class="brand">M<span>10</span> / LEGACY</a>
-    <div class="navlinks" id="navlinks">
-      <a href="#legacy">THE LEGACY</a>
-      <a href="#career">CAREER</a>
-      <a href="#trophies">TROPHIES</a>
-      <a href="#moments">MOMENTS</a>
-      <a href="#experience">EXPERIENCE</a>
-    </div>
-    <div class="navright">
-      <button class="navbtn" id="themeBtn" aria-label="Toggle colour theme" title="Toggle theme">☼</button>
-      <button class="navbtn" id="favBtn" aria-label="Save favourite" title="Save favourite">♡</button>
-      <button class="navbtn menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
-    </div>
-  </nav>
-</header>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home">MESSI<span>10</span></a>
 
-<main>
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-watermark">10</div>
-  <div class="wrap hero-inner">
-    <div class="overline">Rosario · Argentina · The world</div>
-    <h1>THE<br><span class="line2">ETERNAL</span><span class="blue">10.</span></h1>
-    <p class="hero-copy">Some players make history. One made it look like art. Enter the world of Lionel Messi — a journey of impossible goals, unforgettable nights and a legacy that transcends football.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#legacy">ENTER THE LEGACY <span>↗</span></a>
-      <a class="btn btn-ghost" href="#career">EXPLORE HIS JOURNEY <span>↓</span></a>
-    </div>
-    <div class="hero-meta">
-      <div class="meta"><strong>08</strong><span>Ballon d'Or awards</span></div>
-      <div class="meta"><strong>10</strong><span>Barcelona league titles</span></div>
-      <div class="meta"><strong>01</strong><span>World Cup dream fulfilled</span></div>
-    </div>
-  </div>
-  <div class="scroll-note">SCROLL TO DISCOVER ↓</div>
-</section>
-
-<div class="wrap">
-  <div class="stats reveal">
-    <div class="stat"><div class="stat-num">8×</div><div class="stat-label">Ballon d'Or winner</div></div>
-    <div class="stat"><div class="stat-num">4×</div><div class="stat-label">Champions League</div></div>
-    <div class="stat"><div class="stat-num">2022</div><div class="stat-label">World Cup champion</div></div>
-    <div class="stat"><div class="stat-num">10</div><div class="stat-label">The iconic number</div></div>
-  </div>
-</div>
-
-<section class="section" id="legacy">
-  <div class="wrap legacy-grid reveal">
-    <div class="legacy-image">
-      <div class="image-tag">A career beyond comparison</div>
-    </div>
-    <div class="legacy-copy">
-      <div class="section-label">01 / The phenomenon</div>
-      <h2 class="section-title">NOT JUST A<br><span class="stroke">FOOTBALLER.</span><br>A FEELING.</h2>
-      <p>There are statistics, there are trophies, and then there is the feeling of watching Lionel Messi play. The close control, the vision, the balance, the impossible angle that suddenly becomes possible.</p>
-      <p>From the streets of Rosario to the greatest stages in world football, his journey has been shaped by extraordinary talent, persistence and a love for the game.</p>
-      <div class="pullquote">“Greatness is not always loud. Sometimes it just takes one touch.”<small>An original fan tribute</small></div>
-    </div>
-  </div>
-</section>
-
-<section class="section career-section" id="career">
-  <div class="wrap reveal">
-    <div class="career-head">
-      <div>
-        <div class="section-label">02 / The journey</div>
-        <h2 class="section-title">FOUR CHAPTERS.<br><span class="stroke">ONE LEGACY.</span></h2>
+      <div class="nav-links" id="navLinks">
+        <a href="#legacy">LEGACY</a>
+        <a href="#career">CAREER</a>
+        <a href="#trophies">TROPHIES</a>
+        <a href="#worldcup">WORLD CUP</a>
+        <a href="#moments">MOMENTS</a>
+        <a href="#quiz">QUIZ</a>
       </div>
-      <p class="section-desc">Every shirt tells a story. Select a chapter to explore the different stages of Messi's career.</p>
-    </div>
-    <div class="career-tabs" id="careerTabs">
-      <button class="tab active" data-career="barcelona">01 · BARCELONA</button>
-      <button class="tab" data-career="psg">02 · PARIS</button>
-      <button class="tab" data-career="miami">03 · MIAMI</button>
-      <button class="tab" data-career="argentina">04 · ARGENTINA</button>
-    </div>
-    <div class="career-panel">
-      <div class="career-info" id="careerInfo">
-        <div class="career-years">2004 — 2021</div>
-        <h3 class="career-name">THE<br>BARCELONA ERA.</h3>
-        <p class="career-text">From a young academy talent to the centre of a historic team. Messi's Barcelona years brought league dominance, European triumphs and a style of play that captivated the world.</p>
-        <div class="career-foot">
-          <span><strong>10</strong>La Liga titles</span>
-          <span><strong>4</strong>Champions Leagues</span>
-          <span><strong>1</strong>Historic number 10</span>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">☼</button>
+        <button class="icon-btn" id="favoriteBtn" aria-label="Favourite this website" title="Favourite Messi">♡</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation menu">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-label">A legend beyond the game</div>
+        <h1>LIONEL <span>MESSI.</span></h1>
+        <p>
+          One left foot. Countless magical moments. A journey from Rosario to
+          football immortality. Explore the career, achievements and legacy of
+          the man who made the impossible look effortless.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#legacy">EXPLORE THE LEGACY ↗</a>
+          <a class="btn btn-outline" href="#worldcup">THE WORLD CUP STORY</a>
         </div>
       </div>
-      <div class="career-image" id="careerImage" style="background-image:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=85')"></div>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="trophies">
-  <div class="wrap reveal">
-    <div class="trophy-top">
+      <div class="hero-visual" aria-label="Messi number ten inspired graphic">
+        <div class="hero-ring">
+          <div class="hero-number">10</div>
+        </div>
+        <div class="hero-card">
+          <strong>THE MAGICIAN</strong>
+          <small>Rosario, Argentina · Number 10</small>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats-strip">
+      <div class="stats-grid">
+        <div class="stat"><strong>8</strong><span>Ballon d'Or awards</span></div>
+        <div class="stat"><strong>2022</strong><span>World Cup champion</span></div>
+        <div class="stat"><strong>10</strong><span>Iconic shirt number</span></div>
+        <div class="stat"><strong>GOAT</strong><span>A generational legend</span></div>
+      </div>
+    </div>
+
+    <section id="legacy">
+      <div class="split">
+        <div class="feature-art reveal">
+          <span class="feature-note">MORE THAN FOOTBALL</span>
+        </div>
+
+        <div class="reveal">
+          <div class="eyebrow">The story of a legend</div>
+          <h2 class="section-title">Small in stature.<br><span class="accent">Giant in history.</span></h2>
+          <p class="section-intro">
+            Born in Rosario, Argentina, Lionel Messi grew into one of the most
+            influential footballers the world has ever seen. His close control,
+            vision, passing and finishing transformed matches and inspired
+            millions of young players.
+          </p>
+          <div class="quote">
+            <p>“You have to fight to reach your dream. You have to sacrifice and work hard for it.”</p>
+            <small>— Commonly attributed to Lionel Messi</small>
+          </div>
+          <a class="btn btn-primary" href="#career">DISCOVER HIS JOURNEY ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="career-section" id="career">
+      <div class="container">
+        <div class="eyebrow">One extraordinary journey</div>
+        <h2 class="section-title">The <span class="accent">career timeline</span></h2>
+        <p class="section-intro">Choose a chapter to explore the major stages of Messi's senior career.</p>
+
+        <div class="tabs" role="tablist" aria-label="Career timeline">
+          <button class="tab active" data-career="barcelona">Barcelona</button>
+          <button class="tab" data-career="argentina">Argentina</button>
+          <button class="tab" data-career="psg">Paris Saint-Germain</button>
+          <button class="tab" data-career="miami">Inter Miami</button>
+        </div>
+
+        <article class="career-card" id="careerCard">
+          <div class="career-year" id="careerYear">2004–2021</div>
+          <div>
+            <h3 id="careerTitle">The Barcelona era</h3>
+            <p id="careerText">
+              Messi rose through Barcelona's system and became the centrepiece
+              of a historic team, winning major domestic and European honours
+              while producing extraordinary goals and assists.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="trophies">
+      <div class="container">
+        <div class="eyebrow">A collection of greatness</div>
+        <h2 class="section-title">The <span class="gold">trophy cabinet</span></h2>
+        <p class="section-intro">
+          Explore some of the biggest honours associated with Messi's career.
+          Use the filters or search to find a competition.
+        </p>
+
+        <div class="trophy-tools">
+          <button class="tab active" data-filter="all">All honours</button>
+          <button class="tab" data-filter="club">Club</button>
+          <button class="tab" data-filter="international">International</button>
+          <input class="search-box" id="trophySearch" type="search" placeholder="Search honours..." aria-label="Search honours">
+        </div>
+
+        <div class="trophy-grid" id="trophyGrid">
+          <article class="trophy" data-category="international">
+            <div class="trophy-icon">🏆</div>
+            <h3>FIFA World Cup</h3>
+            <p>Argentina lifted the trophy in Qatar in 2022.</p>
+            <span class="tag">International</span>
+          </article>
+          <article class="trophy" data-category="international">
+            <div class="trophy-icon">🥇</div>
+            <h3>Copa América</h3>
+            <p>Argentina won the continental title in 2021 and 2024.</p>
+            <span class="tag">International</span>
+          </article>
+          <article class="trophy" data-category="international">
+            <div class="trophy-icon">🌟</div>
+            <h3>Finalissima</h3>
+            <p>Argentina defeated Italy in the 2022 intercontinental final.</p>
+            <span class="tag">International</span>
+          </article>
+          <article class="trophy" data-category="club">
+            <div class="trophy-icon">🔵🔴</div>
+            <h3>UEFA Champions League</h3>
+            <p>Four Champions League titles with Barcelona.</p>
+            <span class="tag">Club</span>
+          </article>
+          <article class="trophy" data-category="club">
+            <div class="trophy-icon">🇪🇸</div>
+            <h3>La Liga</h3>
+            <p>Ten Spanish league titles during his Barcelona career.</p>
+            <span class="tag">Club</span>
+          </article>
+          <article class="trophy" data-category="club">
+            <div class="trophy-icon">🇫🇷</div>
+            <h3>Ligue 1</h3>
+            <p>Two French league titles with Paris Saint-Germain.</p>
+            <span class="tag">Club</span>
+          </article>
+          <article class="trophy" data-category="club">
+            <div class="trophy-icon">🇺🇸</div>
+            <h3>Leagues Cup</h3>
+            <p>Inter Miami won the 2023 tournament after Messi's arrival.</p>
+            <span class="tag">Club</span>
+          </article>
+          <article class="trophy" data-category="international">
+            <div class="trophy-icon">🥇</div>
+            <h3>Olympic Gold</h3>
+            <p>Won with Argentina's Olympic team in Beijing in 2008.</p>
+            <span class="tag">International</span>
+          </article>
+          <article class="trophy" data-category="international">
+            <div class="trophy-icon">🌎</div>
+            <h3>FIFA U-20 World Cup</h3>
+            <p>Won with Argentina's under-20 team in 2005.</p>
+            <span class="tag">International</span>
+          </article>
+        </div>
+        <p class="empty-state" id="emptyState">No honours match your search.</p>
+      </div>
+    </section>
+
+    <section class="world-cup" id="worldcup">
+      <div class="container wc-grid">
+        <div>
+          <div class="eyebrow">The dream becomes reality</div>
+          <div class="wc-year">2022</div>
+          <h2 class="section-title">The world belongs to Argentina.</h2>
+          <p class="section-intro">
+            In Qatar, Argentina won a dramatic final against France on penalties
+            after a 3–3 draw. Messi scored twice in the final and received the
+            Golden Ball as the tournament's best player.
+          </p>
+          <a class="btn btn-primary" href="#moments">RELIVE THE MOMENTS ↗</a>
+        </div>
+
+        <div class="wc-facts">
+          <div class="wc-fact"><strong>7</strong><span>Goals scored by Messi at the tournament</span></div>
+          <div class="wc-fact"><strong>3</strong><span>Assists recorded at the tournament</span></div>
+          <div class="wc-fact"><strong>2</strong><span>Goals by Messi in the final</span></div>
+          <div class="wc-fact"><strong>1</strong><span>Dream fulfilled for Argentina</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="moments">
+      <div class="container">
+        <div class="eyebrow">Moments that made history</div>
+        <h2 class="section-title">Beyond <span class="accent">the ordinary</span></h2>
+        <p class="section-intro">A few chapters that helped define an unforgettable football journey.</p>
+
+        <div class="moments-grid">
+          <article class="moment reveal">
+            <span>2009 · Club football</span>
+            <h3>A historic Barcelona side</h3>
+            <p>Barcelona completed a remarkable six-trophy calendar-year haul in 2009.</p>
+          </article>
+          <article class="moment reveal">
+            <span>2021 · International</span>
+            <h3>First senior Copa América</h3>
+            <p>Argentina won the title, with Messi playing a major role throughout the tournament.</p>
+          </article>
+          <article class="moment reveal">
+            <span>2022 · World Cup</span>
+            <h3>The ultimate triumph</h3>
+            <p>Argentina defeated France in one of the most dramatic World Cup finals ever played.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts-section" id="facts">
+      <div class="container">
+        <div class="eyebrow">Little details, legendary impact</div>
+        <h2 class="section-title">Messi <span class="accent">facts</span></h2>
+        <p class="section-intro">Quick facts about the player behind the number 10 shirt.</p>
+
+        <div class="facts-grid">
+          <div class="fact"><span class="fact-num">01</span><p>Messi was born on 24 June 1987 in Rosario, Argentina.</p></div>
+          <div class="fact"><span class="fact-num">02</span><p>He joined Barcelona's youth academy, La Masia, as a teenager.</p></div>
+          <div class="fact"><span class="fact-num">03</span><p>He won the men's Ballon d'Or eight times through 2023.</p></div>
+          <div class="fact"><span class="fact-num">04</span><p>He captained Argentina to the 2022 FIFA World Cup title.</p></div>
+          <div class="fact"><span class="fact-num">05</span><p>He won Olympic gold with Argentina in 2008.</p></div>
+          <div class="fact"><span class="fact-num">06</span><p>His game is celebrated for dribbling, vision, passing and finishing.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="container">
+        <div class="eyebrow" style="text-align:center">Think you know the legend?</div>
+        <h2 class="section-title" style="text-align:center">The Messi <span class="accent">quiz</span></h2>
+        <p class="section-intro" style="text-align:center;margin-left:auto;margin-right:auto">Test your knowledge. Pick an answer and see how many you can get right.</p>
+
+        <div class="quiz-wrap">
+          <div class="quiz-top">
+            <span id="quizProgress">QUESTION 1 OF 5</span>
+            <span id="quizScore">SCORE: 0</span>
+          </div>
+          <h3 class="quiz-question" id="quizQuestion">Where was Lionel Messi born?</h3>
+          <div class="answers" id="quizAnswers"></div>
+          <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+          <div class="quiz-footer">
+            <span class="made-by">MESSI KNOWLEDGE TEST</span>
+            <button class="btn btn-primary" id="nextQuestion" disabled>NEXT QUESTION →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main">
       <div>
-        <div class="section-label">03 / The collection</div>
-        <h2 class="section-title">BUILT ON<br><span class="stroke">GREATNESS.</span></h2>
-        <p class="section-desc">Explore selected honours from Messi's club and international career.</p>
+        <div class="footer-brand">MESSI<span>10</span></div>
+        <p class="footer-note">A fan-made tribute to the career, achievements and unforgettable moments of Lionel Messi.</p>
       </div>
-      <input class="search" id="trophySearch" type="search" placeholder="Search the collection..." aria-label="Search honours">
-    </div>
-    <div class="trophy-filters" id="trophyFilters">
-      <button class="tab active" data-filter="all">ALL HONOURS</button>
-      <button class="tab" data-filter="barcelona">BARCELONA</button>
-      <button class="tab" data-filter="psg">PARIS</button>
-      <button class="tab" data-filter="miami">MIAMI</button>
-      <button class="tab" data-filter="argentina">ARGENTINA</button>
-    </div>
-    <div class="trophy-grid" id="trophyGrid">
-      <article class="trophy-card" data-team="barcelona" data-number="01"><div class="trophy-icon">✳</div><h3>Champions League</h3><p>European nights, unforgettable goals and four continental titles with Barcelona.</p><span class="trophy-tag">Barcelona · 4 titles</span></article>
-      <article class="trophy-card" data-team="barcelona" data-number="02"><div class="trophy-icon">✳</div><h3>La Liga</h3><p>A decade-plus of domestic excellence in Spanish football.</p><span class="trophy-tag">Barcelona · 10 titles</span></article>
-      <article class="trophy-card" data-team="barcelona" data-number="03"><div class="trophy-icon">✳</div><h3>Copa del Rey</h3><p>Memorable cup campaigns and domestic knockout success.</p><span class="trophy-tag">Barcelona · 7 titles</span></article>
-      <article class="trophy-card" data-team="psg" data-number="04"><div class="trophy-icon">✳</div><h3>Ligue 1</h3><p>A new chapter in France, with league titles in both seasons.</p><span class="trophy-tag">Paris · 2 titles</span></article>
-      <article class="trophy-card" data-team="miami" data-number="05"><div class="trophy-icon">✳</div><h3>Leagues Cup</h3><p>An immediate impact in the United States, lifting silverware in 2023.</p><span class="trophy-tag">Inter Miami · 2023</span></article>
-      <article class="trophy-card" data-team="miami" data-number="06"><div class="trophy-icon">✳</div><h3>Supporters' Shield</h3><p>Recognition for an exceptional MLS regular season.</p><span class="trophy-tag">Inter Miami · 2024</span></article>
-      <article class="trophy-card" data-team="argentina" data-number="07"><div class="trophy-icon">✳</div><h3>FIFA World Cup</h3><p>The dream fulfilled in Qatar after a dramatic and unforgettable final.</p><span class="trophy-tag">Argentina · 2022</span></article>
-      <article class="trophy-card" data-team="argentina" data-number="08"><div class="trophy-icon">✳</div><h3>Copa América</h3><p>Continental glory with Argentina, including the 2021 and 2024 titles.</p><span class="trophy-tag">Argentina · 2021, 2024</span></article>
-      <article class="trophy-card" data-team="argentina" data-number="09"><div class="trophy-icon">✳</div><h3>Olympic Gold</h3><p>A special achievement with Argentina's Olympic football team.</p><span class="trophy-tag">Argentina · 2008</span></article>
-    </div>
-    <p class="no-results" id="noResults" hidden>No matching honours. Try a different search.</p>
-  </div>
-</section>
 
-<section class="section">
-  <div class="wrap reveal">
-    <div class="worldcup">
-      <div class="worldcup-copy">
-        <div class="section-label">18 December 2022 · Lusail</div>
-        <h3>THE WORLD<br>WAS <span>WATCHING.</span></h3>
-        <p>A final for the ages. Argentina and France delivered a thrilling World Cup final, and Argentina ultimately lifted the trophy after a penalty shootout. Messi's dream became reality.</p>
-        <a href="#moments" class="btn btn-primary" style="margin-top:25px">RELIVE THE STORY ↗</a>
-      </div>
-      <div class="worldcup-art"><span aria-label="Trophy illustration">🏆</span></div>
-    </div>
-  </div>
-</section>
+      <div class="footer-credit">
+        <svg class="dodo-logo" viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dodo's original crown and cosmic crest logo">
+          <defs>
+            <linearGradient id="dodoGold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fff0b2"/>
+              <stop offset="48%" stop-color="#f6ca72"/>
+              <stop offset="100%" stop-color="#b67a28"/>
+            </linearGradient>
+            <linearGradient id="dodoBlue" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#8ce0ff"/>
+              <stop offset="100%" stop-color="#168de2"/>
+            </linearGradient>
+          </defs>
 
-<section class="section" id="moments">
-  <div class="wrap reveal">
-    <div class="section-label">04 / The memories</div>
-    <h2 class="section-title">MOMENTS THAT<br><span class="stroke">NEVER FADE.</span></h2>
-    <p class="section-desc">A few defining chapters in a career that continues to inspire football fans everywhere.</p>
-    <div class="moments-grid">
-      <article class="moment">
-        <div class="moment-img"><img loading="lazy" src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=85" alt="Football stadium under lights"></div>
-        <div class="moment-body"><div class="moment-index">01 / THE CLUB YEARS</div><h3>The Barcelona Era</h3><p>A remarkable period of goals, records, teamwork and a generation-defining style of football.</p></div>
-      </article>
-      <article class="moment">
-        <div class="moment-img"><img loading="lazy" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=85" alt="Football pitch prepared for a match"></div>
-        <div class="moment-body"><div class="moment-index">02 / THE DREAM</div><h3>World Champions</h3><p>Argentina's World Cup triumph in 2022 became one of the defining moments of Messi's career.</p></div>
-      </article>
-      <article class="moment">
-        <div class="moment-img"><img loading="lazy" src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=85" alt="Football match in progress"></div>
-        <div class="moment-body"><div class="moment-index">03 / A NEW CHAPTER</div><h3>Miami Magic</h3><p>A fresh adventure in American football, beginning with a memorable Leagues Cup victory in 2023.</p></div>
-      </article>
-    </div>
-  </div>
-</section>
+          <path d="M50 5 L61 19 L81 12 L77 34 L91 42 L82 80 L50 103 L18 80 L9 42 L23 34 L19 12 L39 19 Z"
+                fill="#0b1d33" stroke="url(#dodoGold)" stroke-width="2.5" stroke-linejoin="round"/>
 
-<section class="section" id="experience">
-  <div class="wrap reveal">
-    <div class="section-label">05 / Your experience</div>
-    <h2 class="section-title">HOW WELL DO<br><span class="stroke">YOU KNOW THE GOAT?</span></h2>
-    <p class="section-desc">Discover a random fact, test your knowledge and save your favourite setting.</p>
-    <div class="interactive-grid" style="margin-top:38px">
-      <div class="widget">
-        <div class="section-label">THE FACT FILE</div>
-        <h3>BEHIND THE LEGEND.</h3>
-        <p class="fact-text" id="factText">Messi won the Golden Ball as the best player at the 2014 and 2022 FIFA World Cups.</p>
-        <button class="btn btn-primary" id="newFact">ANOTHER FACT ↻</button>
-        <button class="btn" id="shareFact">SHARE FACT ↗</button>
-        <div class="widget-status" id="factStatus" aria-live="polite"></div>
-      </div>
-      <div class="widget">
-        <div class="section-label" id="quizCount">QUESTION 01 / 05</div>
-        <h3>THE MESSI QUIZ.</h3>
-        <p class="quiz-question" id="question">Which country does Messi represent internationally?</p>
-        <div class="answers" id="answers"></div>
-        <div class="widget-status" id="quizStatus" aria-live="polite">Choose your answer.</div>
-        <button class="btn btn-primary" id="nextQuestion" hidden>NEXT QUESTION →</button>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
+          <path d="M25 33 L21 18 L38 29 L50 12 L62 29 L79 18 L75 39"
+                fill="none" stroke="url(#dodoGold)" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="#home" class="brand">M<span>10</span> / LEGACY</a>
-        <p class="footer-copy">A fan-made celebration of Lionel Andrés Messi — the football, the memories and the magic. Created for fans who believe the beautiful game is an art form.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#legacy">THE LEGACY</a><a href="#career">CAREER</a><a href="#trophies">TROPHIES</a><a href="#moments">MOMENTS</a>
+          <circle cx="21" cy="17" r="3.5" fill="#f6ca72"/>
+          <circle cx="50" cy="11" r="4" fill="#f6ca72"/>
+          <circle cx="79" cy="17" r="3.5" fill="#f6ca72"/>
+
+          <path d="M28 40 Q50 29 72 40 L67 72 L50 86 L33 72 Z"
+                fill="#071426" stroke="url(#dodoBlue)" stroke-width="2"/>
+
+          <text x="50" y="68" text-anchor="middle" font-family="Barlow Condensed, sans-serif"
+                font-size="35" font-weight="900" fill="url(#dodoGold)">D</text>
+
+          <ellipse cx="50" cy="58" rx="34" ry="12" fill="none" stroke="url(#dodoBlue)"
+                   stroke-width="1.3" transform="rotate(-28 50 58)"/>
+
+          <circle cx="20" cy="70" r="2" fill="#8ce0ff"/>
+          <circle cx="79" cy="43" r="2" fill="#f6ca72"/>
+          <circle cx="73" cy="84" r="2" fill="#8ce0ff"/>
+        </svg>
+
+        <div>
+          <div class="made-by">Website created by</div>
+          <div class="dodo-name">DODO</div>
+          <div class="dodo-caption">ONE CREATOR. INFINITE IDEAS.</div>
+        </div>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© <span id="year"></span> M10 LEGACY · UNOFFICIAL FAN PROJECT</span>
-      <span>NOT AFFILIATED WITH MESSI OR ANY CLUB OR FOOTBALL ORGANISATION.</span>
+      <span>© <span id="year"></span> MESSI10 FAN WEBSITE</span>
+      <span>Made with passion for football ⚽</span>
+      <span>Fan-made project · Not an official Messi website</span>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
-<script>
-const $ = s => document.querySelector(s);
-const $$ = s => [...document.querySelectorAll(s)];
+  <script>
+    // Mobile navigation
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-/* MOBILE NAVIGATION */
-const navlinks = $("#navlinks");
-const menuBtn = $("#menuBtn");
+    menuBtn.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
+      menuBtn.textContent = isOpen ? "✕" : "☰";
+    });
 
-menuBtn.addEventListener("click", () => {
-  const opened = navlinks.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded", String(opened));
-  menuBtn.textContent = opened ? "✕" : "☰";
-});
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.textContent = "☰";
+      });
+    });
 
-$$(".navlinks a").forEach(link => {
-  link.addEventListener("click", () => {
-    navlinks.classList.remove("open");
-    menuBtn.setAttribute("aria-expanded", "false");
-    menuBtn.textContent = "☰";
-  });
-});
+    // Light and dark theme toggle
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      const lightMode = document.body.classList.contains("light");
+      themeToggle.textContent = lightMode ? "☾" : "☼";
+      themeToggle.setAttribute("aria-label", lightMode ? "Switch to dark theme" : "Switch to light theme");
+    });
 
-/* THEME SETTING */
-function saveSetting(key, value) {
-  try { localStorage.setItem(key, value); } catch (e) {}
-}
-function getSetting(key) {
-  try { return localStorage.getItem(key); } catch (e) { return null; }
-}
-const themeBtn = $("#themeBtn");
+    // Favourite button
+    const favoriteBtn = document.getElementById("favoriteBtn");
+    favoriteBtn.addEventListener("click", () => {
+      const active = favoriteBtn.classList.toggle("active");
+      favoriteBtn.textContent = active ? "♥" : "♡";
+      favoriteBtn.style.color = active ? "#ff6b85" : "";
+      favoriteBtn.setAttribute("aria-pressed", String(active));
+    });
 
-function applyTheme(theme) {
-  document.body.classList.toggle("light", theme === "light");
-  themeBtn.textContent = theme === "light" ? "☾" : "☼";
-  themeBtn.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
-  saveSetting("m10-theme", theme);
-}
-applyTheme(getSetting("m10-theme") || "dark");
+    // Scroll progress and back-to-top button
+    const progress = document.getElementById("progress");
+    const backTop = document.getElementById("backTop");
 
-themeBtn.addEventListener("click", () => {
-  applyTheme(document.body.classList.contains("light") ? "dark" : "light");
-});
+    function updateScrollUI() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const percent = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      progress.style.width = percent + "%";
+      backTop.classList.toggle("show", window.scrollY > 450);
+    }
 
-/* FAVOURITE */
-const favBtn = $("#favBtn");
+    window.addEventListener("scroll", updateScrollUI, { passive: true });
+    updateScrollUI();
 
-function renderFavourite() {
-  const active = getSetting("m10-favourite") === "yes";
-  favBtn.textContent = active ? "♥" : "♡";
-  favBtn.style.color = active ? "var(--blue)" : "var(--text)";
-  favBtn.setAttribute("aria-pressed", String(active));
-  favBtn.title = active ? "Remove saved favourite" : "Save Messi as favourite";
-}
-renderFavourite();
+    backTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-favBtn.addEventListener("click", () => {
-  saveSetting("m10-favourite", getSetting("m10-favourite") === "yes" ? "no" : "yes");
-  renderFavourite();
-});
+    // Reveal sections as they enter view
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
 
-/* SCROLL EFFECTS */
-const progress = $("#progress");
-const toTop = $("#toTop");
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
-function onScroll() {
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  progress.style.width = (max > 0 ? window.scrollY / max * 100 : 0) + "%";
-  toTop.classList.toggle("show", window.scrollY > 500);
-}
-window.addEventListener("scroll", onScroll, {passive:true});
-onScroll();
-toTop.addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+    // Career timeline tabs
+    const careerData = {
+      barcelona: {
+        year: "2004–2021",
+        title: "The Barcelona era",
+        text: "Messi rose through Barcelona's system and became the centrepiece of a historic team, winning major domestic and European honours while producing extraordinary goals and assists."
+      },
+      argentina: {
+        year: "2005–present",
+        title: "Argentina: the national dream",
+        text: "From his senior debut to Copa América glory in 2021 and the World Cup triumph in 2022, Messi's international journey became one of perseverance, leadership and unforgettable celebrations."
+      },
+      psg: {
+        year: "2021–2023",
+        title: "A new chapter in Paris",
+        text: "Messi joined Paris Saint-Germain in 2021, won two Ligue 1 titles and continued to create chances and score goals while adapting to a new league."
+      },
+      miami: {
+        year: "2023–present",
+        title: "A new era in Miami",
+        text: "Messi joined Inter Miami in 2023 and helped the club win its first Leagues Cup, bringing worldwide attention to the team and Major League Soccer."
+      }
+    };
 
-/* SECTION REVEALS */
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
+    document.querySelectorAll("[data-career]").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll("[data-career]").forEach(tab => tab.classList.remove("active"));
+        button.classList.add("active");
+
+        const data = careerData[button.dataset.career];
+        document.getElementById("careerYear").textContent = data.year;
+        document.getElementById("careerTitle").textContent = data.title;
+        document.getElementById("careerText").textContent = data.text;
+      });
+    });
+
+    // Trophy category filters and search
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const trophyCards = document.querySelectorAll(".trophy");
+    const trophySearch = document.getElementById("trophySearch");
+    const emptyState = document.getElementById("emptyState");
+    let activeFilter = "all";
+
+    function filterTrophies() {
+      const query = trophySearch.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      trophyCards.forEach(card => {
+        const categoryMatch = activeFilter === "all" || card.dataset.category === activeFilter;
+        const textMatch = card.textContent.toLowerCase().includes(query);
+        const visible = categoryMatch && textMatch;
+        card.style.display = visible ? "" : "none";
+        if (visible) visibleCount++;
+      });
+
+      emptyState.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        activeFilter = button.dataset.filter;
+        filterTrophies();
+      });
+    });
+
+    trophySearch.addEventListener("input", filterTrophies);
+
+    // Messi quiz
+    const quizQuestions = [
+      {
+        question: "Where was Lionel Messi born?",
+        answers: ["Madrid, Spain", "Rosario, Argentina", "Lisbon, Portugal", "Buenos Aires, Brazil"],
+        correct: 1,
+        explanation: "Messi was born in Rosario, Argentina, on 24 June 1987."
+      },
+      {
+        question: "Which country did Messi captain to the 2022 World Cup title?",
+        answers: ["Spain", "Brazil", "Argentina", "France"],
+        correct: 2,
+        explanation: "Argentina defeated France in the final after a 3–3 draw and won on penalties."
+      },
+      {
+        question: "Which youth academy did Messi join in Barcelona?",
+        answers: ["La Masia", "Ajax Academy", "Clairefontaine", "Cobham"],
+        correct: 0,
+        explanation: "La Masia is Barcelona's famous youth academy."
+      },
+      {
+        question: "How many men's Ballon d'Or awards had Messi won through 2023?",
+        answers: ["Five", "Six", "Seven", "Eight"],
+        correct: 3,
+        explanation: "Messi won his eighth Ballon d'Or in 2023."
+      },
+      {
+        question: "Which club did Messi join in 2023?",
+        answers: ["Manchester City", "Inter Miami", "Juventus", "Bayern Munich"],
+        correct: 1,
+        explanation: "Messi joined Inter Miami in Major League Soccer in 2023."
+      }
+    ];
+
+    let questionIndex = 0;
+    let score = 0;
+    let answered = false;
+
+    const quizProgress = document.getElementById("quizProgress");
+    const quizScore = document.getElementById("quizScore");
+    const quizQuestion = document.getElementById("quizQuestion");
+    const quizAnswers = document.getElementById("quizAnswers");
+    const quizFeedback = document.getElementById("quizFeedback");
+    const nextQuestion = document.getElementById("nextQuestion");
+
+    function renderQuestion() {
+      answered = false;
+      const question = quizQuestions[questionIndex];
+      quizProgress.textContent = `QUESTION ${questionIndex + 1} OF ${quizQuestions.length}`;
+      quizScore.textContent = `SCORE: ${score}`;
+      quizQuestion.textContent = question.question;
+      quizAnswers.innerHTML = "";
+      quizFeedback.textContent = "";
+      nextQuestion.disabled = true;
+      nextQuestion.textContent = questionIndex === quizQuestions.length - 1 ? "SEE RESULTS →" : "NEXT QUESTION →";
+
+      question.answers.forEach((answer, index) => {
+        const button = document.createElement("button");
+        button.className = "answer";
+        button.textContent = `${String.fromCharCode(65 + index)}. ${answer}`;
+        button.addEventListener("click", () => chooseAnswer(index));
+        quizAnswers.appendChild(button);
+      });
+    }
+
+    function chooseAnswer(index) {
+      if (answered) return;
+      answered = true;
+
+      const question = quizQuestions[questionIndex];
+      const buttons = [...quizAnswers.querySelectorAll("button")];
+
+      buttons.forEach((button, i) => {
+        button.disabled = true;
+        if (i === question.correct) button.classList.add("correct");
+      });
+
+      if (index === question.correct) {
+        score++;
+        quizFeedback.textContent = "Correct! " + question.explanation;
+      } else {
+        buttons[index].classList.add("wrong");
+        quizFeedback.textContent = "Not quite. " + question.explanation;
+      }
+
+      quizScore.textContent = `SCORE: ${score}`;
+      nextQuestion.disabled = false;
+    }
+
+    nextQuestion.addEventListener("click", () => {
+      if (!answered) return;
+
+      if (questionIndex < quizQuestions.length - 1) {
+        questionIndex++;
+        renderQuestion();
+      } else {
+        quizProgress.textContent = "QUIZ COMPLETE";
+        quizQuestion.textContent = `You scored ${score} out of ${quizQuestions.length}!`;
+        quizAnswers.innerHTML = "";
+        quizFeedback.textContent = score === 5
+          ? "Perfect score! You're a true Messi expert. 🐐"
+          : score >= 3
+            ? "Great work! You know your Messi history."
+            : "Good try! Explore the website and challenge yourself again.";
+        nextQuestion.textContent = "PLAY AGAIN ↻";
+        nextQuestion.disabled = false;
+        nextQuestion.onclick = () => {
+          questionIndex = 0;
+          score = 0;
+          nextQuestion.onclick = null;
+          renderQuestion();
+        };
       }
     });
-  }, {threshold:0.08});
-  $$(".reveal").forEach(el => revealObserver.observe(el));
-} else {
-  $$(".reveal").forEach(el => el.classList.add("visible"));
-}
 
-/* CAREER SWITCHER */
-const careerData = {
-  barcelona: {
-    years:"2004 — 2021", name:"THE<br>BARCELONA ERA.",
-    text:"From a young academy talent to the centre of a historic team. Messi's Barcelona years brought league dominance, European triumphs and a style of play that captivated the world.",
-    stats:[["10","La Liga titles"],["4","Champions Leagues"],["7","Copa del Rey titles"]],
-    image:"https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=85"
-  },
-  psg: {
-    years:"2021 — 2023", name:"A NEW<br>PARIS CHAPTER.",
-    text:"Messi began a new adventure in France, helping Paris Saint-Germain win back-to-back Ligue 1 titles while sharing the pitch with world-class teammates.",
-    stats:[["2","Ligue 1 titles"],["1","New challenge"],["30","Club appearances in first season"]],
-    image:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=85"
-  },
-  miami: {
-    years:"2023 — PRESENT", name:"MIAMI<br>MEETS MAGIC.",
-    text:"A new football chapter in the United States. Messi made an immediate impact at Inter Miami, leading the club to its first Leagues Cup title in 2023.",
-    stats:[["2023","Leagues Cup"],["2024","Supporters' Shield"],["10","Iconic number"]],
-    image:"https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=85"
-  },
-  argentina: {
-    years:"2005 — PRESENT", name:"THE ALBICELESTE<br>DREAM.",
-    text:"A long international journey culminated in Copa América glory and the 2022 World Cup. Messi's Argentina story is one of perseverance, emotion and national pride.",
-    stats:[["2022","World Cup"],["2021","Copa América"],["2008","Olympic gold"]],
-    image:"https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=85"
-  }
-};
+    renderQuestion();
 
-$$("[data-career]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    $$("[data-career]").forEach(b => b.classList.toggle("active", b === btn));
-    const c = careerData[btn.dataset.career];
-    $("#careerInfo").innerHTML = `
-      <div class="career-years">${c.years}</div>
-      <h3 class="career-name">${c.name}</h3>
-      <p class="career-text">${c.text}</p>
-      <div class="career-foot">${c.stats.map(s => `<span><strong>${s[0]}</strong>${s[1]}</span>`).join("")}</div>`;
-    $("#careerImage").style.backgroundImage = `url("${c.image}")`;
-  });
-});
-
-/* TROPHY FILTER AND SEARCH */
-let activeFilter = "all";
-
-function filterTrophies() {
-  const term = $("#trophySearch").value.toLowerCase().trim();
-  let count = 0;
-
-  $$(".trophy-card").forEach(card => {
-    const teamOK = activeFilter === "all" || card.dataset.team === activeFilter;
-    const textOK = card.textContent.toLowerCase().includes(term);
-    const visible = teamOK && textOK;
-    card.hidden = !visible;
-    if (visible) count++;
-  });
-
-  $("#noResults").hidden = count > 0;
-}
-
-$$("[data-filter]").forEach(btn => {
-  btn.addEventListener("click", () => {
-    activeFilter = btn.dataset.filter;
-    $$("[data-filter]").forEach(b => b.classList.toggle("active", b === btn));
-    filterTrophies();
-  });
-});
-$("#trophySearch").addEventListener("input", filterTrophies);
-
-/* FACT GENERATOR */
-const facts = [
-  "Messi won the Golden Ball as the best player at the 2014 and 2022 FIFA World Cups.",
-  "Messi won Olympic gold with Argentina in 2008.",
-  "Messi won eight Ballon d'Or awards by 2023.",
-  "Messi scored twice for Argentina in the 2022 World Cup final.",
-  "Messi made his first-team debut for Barcelona in 2004.",
-  "Messi won the Copa América with Argentina in 2021 and 2024.",
-  "Messi joined Inter Miami in 2023 and won the Leagues Cup that year.",
-  "Messi scored his first senior international goal in 2006."
-];
-let factIndex = 0;
-
-$("#newFact").addEventListener("click", () => {
-  let next = factIndex;
-  while (facts.length > 1 && next === factIndex) {
-    next = Math.floor(Math.random() * facts.length);
-  }
-  factIndex = next;
-  $("#factText").textContent = facts[factIndex];
-  $("#factStatus").textContent = "";
-});
-
-$("#shareFact").addEventListener("click", async () => {
-  const text = $("#factText").textContent + " — M10 Legacy fan website";
-  try {
-    if (navigator.share) {
-      await navigator.share({title:"Messi fact",text});
-      $("#factStatus").textContent = "Share menu opened.";
-    } else if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-      $("#factStatus").textContent = "Fact copied to clipboard!";
-    } else {
-      $("#factStatus").textContent = "Copy the fact text to share it.";
-    }
-  } catch (err) {
-    $("#factStatus").textContent = "You can copy the fact above to share it.";
-  }
-});
-
-/* QUIZ */
-const quiz = [
-  {q:"Which country does Lionel Messi represent internationally?",a:["Spain","Argentina","Brazil","Uruguay"],correct:1},
-  {q:"How many Ballon d'Or awards had Messi won by 2023?",a:["5","6","8","10"],correct:2},
-  {q:"Which club did Messi join as a teenager?",a:["Chelsea","Barcelona","Juventus","Bayern Munich"],correct:1},
-  {q:"In which year did Argentina win the World Cup with Messi?",a:["2014","2018","2022","2024"],correct:2},
-  {q:"Which club did Messi join in 2023?",a:["Inter Miami","Manchester City","Real Madrid","AC Milan"],correct:0}
-];
-
-let quizIndex = 0;
-let quizScore = 0;
-let quizAnswered = false;
-let quizFinished = false;
-
-function renderQuiz() {
-  const q = quiz[quizIndex];
-  quizAnswered = false;
-  quizFinished = false;
-  $("#quizCount").textContent = `QUESTION ${String(quizIndex + 1).padStart(2,"0")} / ${quiz.length}`;
-  $("#question").textContent = q.q;
-  $("#quizStatus").textContent = "Choose your answer.";
-  $("#answers").innerHTML = "";
-  $("#nextQuestion").hidden = true;
-
-  q.a.forEach((answer, index) => {
-    const button = document.createElement("button");
-    button.className = "answer";
-    button.textContent = answer;
-    button.addEventListener("click", () => answerQuiz(index, button));
-    $("#answers").appendChild(button);
-  });
-}
-
-function answerQuiz(index, chosenButton) {
-  if (quizAnswered || quizFinished) return;
-  quizAnswered = true;
-
-  const q = quiz[quizIndex];
-  const buttons = $$("#answers .answer");
-
-  buttons.forEach((button, i) => {
-    button.disabled = true;
-    if (i === q.correct) button.classList.add("good");
-  });
-
-  if (index === q.correct) {
-    quizScore++;
-    $("#quizStatus").textContent = "Correct! You know your football. ⚽";
-  } else {
-    chosenButton.classList.add("bad");
-    $("#quizStatus").textContent = "The correct answer is " + q.a[q.correct] + ".";
-  }
-
-  $("#nextQuestion").textContent = quizIndex === quiz.length - 1 ? "SEE YOUR SCORE →" : "NEXT QUESTION →";
-  $("#nextQuestion").hidden = false;
-}
-
-function showQuizResult() {
-  quizFinished = true;
-  $("#quizCount").textContent = "CHALLENGE COMPLETE";
-  $("#question").textContent = `YOUR SCORE: ${quizScore} / ${quiz.length}`;
-  $("#answers").innerHTML = "";
-  $("#quizStatus").textContent =
-    quizScore === 5 ? "Perfect score. A true Messi expert! 🐐" :
-    quizScore >= 3 ? "Great effort. You're getting there!" :
-    "Keep exploring the legend, then give it another shot!";
-  $("#nextQuestion").textContent = "PLAY AGAIN ↻";
-  $("#nextQuestion").hidden = false;
-}
-
-$("#nextQuestion").addEventListener("click", () => {
-  if (quizFinished) {
-    quizIndex = 0;
-    quizScore = 0;
-    renderQuiz();
-  } else if (quizIndex < quiz.length - 1) {
-    quizIndex++;
-    renderQuiz();
-  } else {
-    showQuizResult();
-  }
-});
-
-renderQuiz();
-$("#year").textContent = new Date().getFullYear();
-</script>
+    // Automatically update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-```
